@@ -20,7 +20,7 @@ function limparSessao() {
     // aguardar();
     sessionStorage.clear();
     // finalizarAguardar();
-    window.location = "http://localhost:8080/login.html";
+    window.location = "../login.html";
 }
 
 // carregamento (loading)

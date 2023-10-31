@@ -131,6 +131,8 @@
 
 </html>
 <script>
+    var grafico_linha2;
+    var grafico_linha3;
     var maquina = localStorage.idMaquina;
 
     function btn_relatorio() {
@@ -242,7 +244,7 @@
 
         //  verificar nome ctx
         var ctx = document.querySelector("#myChart1");
-        var grafico_linha2 = new Chart(ctx, {
+        grafico_linha2 = new Chart(ctx, {
             type: 'line',
             data: dados,
             options: {
@@ -254,18 +256,18 @@
                     display: false,
                     text: 'Dados capturados'
                 },
-                scales: {
-                    yAxes: [{
-                        type: 'linear',
-                        display: true,
-                        position: 'left',
-                        ticks: {
-                            beginAtZero: true,
-                            max: 25,
-                            min: -25
-                        }
-                    }],
-                }
+                // scales: {
+                //     yAxes: [{
+                //         type: 'linear',
+                //         display: true,
+                //         position: 'left',
+                //         ticks: {
+                //             beginAtZero: true,
+                //             max: 25,
+                //             min: -25
+                //         }
+                //     }],
+                // }
             }
         });
 
@@ -306,7 +308,7 @@
 
         //  verificar nome ctx
         var ctx = document.querySelector("#myChart2");
-        var grafico_linha3 = new Chart(ctx, {
+        grafico_linha3 = new Chart(ctx, {
             type: 'line',
             data: dados,
             options: {
@@ -383,17 +385,17 @@
                     dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
 
                     dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
-                    dados.datasets[0].data.push(novoRegistro[0].usoCpu); // incluir uma nova medida de temperatura
+                    dados.datasets[0].data.push(novoRegistro[0].usoMemoria); // incluir uma nova medida de temperatura
 
-                    window.grafico_linha2.update();
+                    window.grafico_linha3.update();
 
                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idCaminhao, dados), 3000);
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico2(idCaminhao, dados), 3000);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
                 // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(idCaminhao, dados), 3000);
+                proximaAtualizacao = setTimeout(() => atualizarGrafico2(idCaminhao, dados), 3000);
             }
         })
             .catch(function (error) {
