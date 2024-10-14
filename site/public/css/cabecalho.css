@@ -28,15 +28,15 @@
     }
     .logo_cabecalho{
         margin: 1vh 1vh 1vh 2vh;
-        height: 22vw;
+        height:15vw;
     }
     .btn_cabecalho{
-        width: 30vw;
-        height: 15vw;
+        width: 20vw;
+        height: 10vw;
         border-radius: 10vw;
         background-color: var(--preto2);
         color: var(--branco);
-        font-size: 5vw;
+        font-size: 1rem;
         font-weight: bold;
         border-color: var(--preto);
         font-family: var(--letra);
@@ -81,22 +81,23 @@ a {
 }
 .logo_cabecalho{
     margin: 1vh 1vh 1vh 6vh;
-    height: 15vh;
+    height: 10vh;
 }
 .btn_cabecalho{
-    width: 12vw;
-    height: 6vh;
-    border-radius: 10vw;
+    /* width: 10vw; */
+    padding: 0.8vw;
+    /* height: 5vh; */
+    border-radius: 30px;
     background-color: var(--preto2);
     color: var(--branco);
-    font-size: 1.4vw;
+    font-size: 1.7rem;
     border-color: transparent;
     font-family: var(--letra);
     text-align: center;
     transition: 0.3s;
 }
 .btn_cabecalho:hover{
-    font-size: 1.5vw;
+    font-size: 1.8rem;
     background-color: var(--preto2);
     color: var(--branco);
     cursor: pointer;
